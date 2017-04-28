@@ -1,0 +1,125 @@
+
+body {
+  font-family: 'Kanit', sans-serif;
+}
+header {
+  display: block;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  text-align: center;
+}
+.logo
+{
+  width: 520px;
+  height: auto;
+}
+.navbar {
+ margin-bottom: 0;
+ border-radius: 0;
+}
+.jumbotron {
+ margin-bottom: 0;
+ border-radius: 0;
+}
+.container {
+ margin-top: 1%;
+}
+.product-head
+{
+ background: #EAEFF9;
+ margin-top: 1px;
+ /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+-webkit-border-radius: 5px;
+/* Firefox 1-3.6 */
+-moz-border-radius: 5px;
+/* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+border-radius: 5px
+padding-left: 23px;
+padding-top: 7px;
+padding-bottom: 7px;
+padding-left:24px;
+}
+
+
+
+
+
+///////////////////////////////////////social
+
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+// Squircle
+a.social {
+	position: relative;
+	display: inline-block;
+	margin: .333rem .25rem;
+	border-radius: .75rem;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	line-height: 3rem;
+	width: 3rem;
+	height: 3rem;
+	font-size: 0;
+	transition: color .333s;
+	&::after {
+		font-family: 'fontawesome', sans-serif;
+		font-size: 1.25rem;
+	}
+	&::before {
+		position: absolute;
+		left: 5px;
+		right: 5px;
+		top: 5px;
+		bottom: 5px;
+		border-radius: .6875rem;
+		content: '';
+	}
+}
+
+// Specific Network Coloring
+$network_names:twitter,
+facebook,
+google,
+linkedin,
+pintrest,
+tumblr,
+vk,
+xing;
+$network_urls:'https://twitter',
+'http://www.facebook',
+'https://plus.google',
+'http://www.linkedin',
+'http://pinterest',
+'http://www.tumblr',
+'https://vk.com',
+'https://www.xing-share';
+$network_colors:#00aced,
+#3b5998,
+#dd4b39,
+#007bb6,
+#cb2027,
+#32506d,
+#5E82A8,
+#175E60;
+$network_icons:'\f099',
+'\f09a',
+'\f0d5',
+'\f0e1',
+'\f0d2',
+'\f173',
+'\f189',
+'\f168';
+@for $i from 1 through length($network_names) {
+	a.social {
+		&.social-#{nth($network_names, $i)},
+		&[href^='#{nth($network_urls, $i)}'] {
+			background-color: nth($network_colors, $i);
+			&::after {
+				content: nth($network_icons, $i);
+			}
+			&::before {
+				box-shadow: 0 0 0 6px nth($network_colors, $i);
+			}
+		}
+	}
+}

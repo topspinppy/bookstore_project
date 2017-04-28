@@ -1,0 +1,14 @@
+RewriteEngine On
+
+
+RewriteRule ^product$ product.php
+
+RewriteRule ^howto$ howto.php
+
+RewriteRule ^cart$ cart.php
+
+RewriteRule ^contact$ contact.php
+
+RewriteRule ^view$ view.php
+
+RewriteRule ^checkout$ checkout.php
